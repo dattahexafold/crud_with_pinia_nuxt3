@@ -62,8 +62,10 @@ export default {
   },
   methods: {
     updateUser(item) {
-        if(item){
+        if(item.id){
           navigateTo(`/update-${item.id}`)
+        }else{
+          alert("add record")
         }
     },
     deleteUser(id){

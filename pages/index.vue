@@ -27,7 +27,7 @@
                       <div class="col-md-6 mb-4">
                         <div class="form-outline">
                           <input
-                          v-model="userData.user.id"
+                            v-model="userData.user.id"
                             type="text"
                             id="form3Example1m"
                             class="form-control form-control-lg"
@@ -40,7 +40,7 @@
                       <div class="col-md-6 mb-4">
                         <div class="form-outline">
                           <input
-                          v-model="userData.user.firstName"
+                            v-model="userData.user.firstName"
                             type="text"
                             id="form3Example1n"
                             class="form-control form-control-lg"
@@ -56,7 +56,7 @@
                       <div class="col-md-6 mb-4">
                         <div class="form-outline">
                           <input
-                          v-model="userData.user.email"
+                            v-model="userData.user.email"
                             type="text"
                             id="form3Example1m1"
                             class="form-control form-control-lg"
@@ -69,7 +69,7 @@
                       <div class="col-md-6 mb-4">
                         <div class="form-outline">
                           <input
-                          v-model="userData.user.city"
+                            v-model="userData.user.city"
                             type="text"
                             id="form3Example1n1"
                             class="form-control form-control-lg"
@@ -83,7 +83,7 @@
 
                     <div class="form-outline mb-4">
                       <input
-                      v-model="userData.user.address"
+                        v-model="userData.user.address"
                         type="text"
                         id="form3Example8"
                         class="form-control form-control-lg"
@@ -100,7 +100,7 @@
 
                       <div class="form-check form-check-inline mb-0 me-4">
                         <input
-                        v-model="userData.user.gender"
+                          v-model="userData.user.gender"
                           class="form-check-input"
                           type="radio"
                           name="inlineRadioOptions"
@@ -114,7 +114,7 @@
 
                       <div class="form-check form-check-inline mb-0 me-4">
                         <input
-                        v-model="userData.user.gender"
+                          v-model="userData.user.gender"
                           class="form-check-input"
                           type="radio"
                           name="inlineRadioOptions"
@@ -128,7 +128,7 @@
 
                       <div class="form-check form-check-inline mb-0">
                         <input
-                        v-model="userData.user.gender"
+                          v-model="userData.user.gender"
                           class="form-check-input"
                           type="radio"
                           name="inlineRadioOptions"
@@ -143,7 +143,7 @@
 
                     <div class="row">
                       <div class="col-md-6 mb-4">
-                        <select class="select"  v-model="userData.user.state">
+                        <select class="select" v-model="userData.user.state">
                           <option value="" selected disabled>State</option>
                           <option value="1">Maharastra</option>
                           <option value="2">Goa</option>
@@ -151,7 +151,7 @@
                         </select>
                       </div>
                       <div class="col-md-6 mb-4">
-                        <select class="select"  v-model="userData.user.city">
+                        <select class="select" v-model="userData.user.city">
                           <option value="" selected disabled>City</option>
                           <option value="1">Mumbai</option>
                           <option value="2">Pune</option>
@@ -162,7 +162,7 @@
 
                     <div class="form-outline mb-4">
                       <input
-                      v-model="userData.user.pincode"
+                        v-model="userData.user.pincode"
                         type="text"
                         id="form3Example90"
                         class="form-control form-control-lg"
@@ -174,7 +174,7 @@
 
                     <div class="form-outline mb-4">
                       <input
-                      v-model="userData.user.cource"
+                        v-model="userData.user.cource"
                         type="text"
                         id="form3Example99"
                         class="form-control form-control-lg"
@@ -207,26 +207,30 @@
   </div>
 </template>
 <script setup>
-import { useCrudStore } from '~/store/operation';
+import { useCrudStore } from "~/store/operation";
 const userData = reactive({
-  user:{
-  id: "",
-  firstName: "",
-  email: "",
-  city: "",
-  address: "",
-  gender: "",
-  state: "",
-  city: "",
-  pincode: "",
-  cource: "",
+  user: {
+    id: "",
+    firstName: "",
+    email: "",
+    city: "",
+    address: "",
+    gender: "",
+    state: "",
+    city: "",
+    pincode: "",
+    cource: "",
   },
-  store:useCrudStore()
+  store: useCrudStore(),
 });
 const SubmitData = () => {
-  userData.store.$state.data.push({...userData.user})
-navigateTo('/usertable')
-};  
+  if (userData.user.id) {
+    userData.store.$state.data.push({ ...userData.user });
+    navigateTo("/usertable");
+  } else {
+    alert("Please add record");
+  }
+};
 </script>
 <style>
 .card-registration .select-input.form-control[readonly]:not([disabled]) {
