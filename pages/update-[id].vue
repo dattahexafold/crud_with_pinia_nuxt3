@@ -106,7 +106,7 @@
                           type="radio"
                           name="inlineRadioOptions"
                           id="femaleGender"
-                          value="option1"
+                          value="female"
                         />
                         <label class="form-check-label" for="femaleGender"
                           >Female</label
@@ -120,7 +120,7 @@
                           type="radio"
                           name="inlineRadioOptions"
                           id="maleGender"
-                          value="option2"
+                          value="male"
                         />
                         <label class="form-check-label" for="maleGender"
                           >Male</label
@@ -134,7 +134,7 @@
                           type="radio"
                           name="inlineRadioOptions"
                           id="otherGender"
-                          value="option3"
+                          value="other"
                         />
                         <label class="form-check-label" for="otherGender"
                           >Other</label

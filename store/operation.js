@@ -3,7 +3,6 @@ import {defineStore} from 'pinia'
     state: () => ({
             data:[],
             loading: false
-            
     }),
    actions:{
     updateUser(user){
