@@ -4,7 +4,7 @@
     <table
     v-if="store.data.length>0"
       id="dtBasicExample"
-      class="table table-striped table-bordered table-sm dataTables_length"
+      class="table table-striped table-bordered "
       cellspacing="0"
       width="100%"
     >
