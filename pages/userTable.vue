@@ -62,7 +62,9 @@ export default {
   },
   methods: {
     updateUser(item) {
-        navigateTo(`/update-${item.id}`)
+        if(item){
+          navigateTo(`/update-${item.id}`)
+        }
     },
     deleteUser(id){
       this.store.deleteUser(id)
