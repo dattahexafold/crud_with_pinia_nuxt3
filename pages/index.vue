@@ -139,16 +139,16 @@ import { Field, Form, ErrorMessage } from "vee-validate";
 
 //define form schema
 const schema = yup.object({
-  id: yup.string().required(),
-  firstName: yup.string().required(),
-  email: yup.string().required(),
-  city: yup.string().required(),
-  address: yup.string().required(),
-  gender: yup.string().required(),
-  state: yup.string().required(),
-  city: yup.string().required(),
-  pincode: yup.string().required(),
-  course: yup.string().required(),
+  id: yup.number().required().min(3),
+  firstName: yup.string().required().trim(),
+  email: yup.string().required().trim(),
+  city: yup.string().required().trim(),
+  address: yup.string().required().trim(),
+  gender: yup.string().required().trim(),
+  state: yup.string().required().trim(),
+  city: yup.string().required().trim(),
+  pincode: yup.string().required().trim(),
+  course: yup.string().required().trim(),
 });
 
 //submit form

@@ -23,7 +23,7 @@
           <td>{{ item.gender }}</td>
           <td>{{ item.state }}</td>
           <td>{{ item.pincode }}</td>
-          <td>{{ item.cource }}</td>
+          <td>{{ item.course }}</td>
           <td class="btn btn-danger btn-dark w-50 bg-danger" @click="deleteUser(item.id)">Delete</td>
           <td class="btn  btn-primary w-50 bg-info" @click="updateUser(item)">
             Update
