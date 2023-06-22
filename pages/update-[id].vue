@@ -101,7 +101,7 @@
                     </div>
 
                     <div class="form-outline mb-4">
-                      <input v-model="userData.user.cource" type="text" id="form3Example99"
+                      <input v-model="userData.user.course" type="text" id="form3Example99"
                         class="form-control form-control-lg" />
                       <label class="form-label" for="form3Example99">Course</label>
                     </div>
@@ -140,7 +140,7 @@ const userData = reactive({
     state: "",
     city: "",
     pincode: "",
-    cource: "",
+    course: "",
   },
   store: useCrudStore(),
 });

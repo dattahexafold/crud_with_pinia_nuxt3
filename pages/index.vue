@@ -107,10 +107,10 @@
                     </div>
 
                     <div class="form-outline mb-4">
-                      <Field name="cource" type="text" id="form3Example99" class="form-control form-control-lg" />
+                      <Field name="course" type="text" id="form3Example99" class="form-control form-control-lg" />
                       <label class="form-label" for="form3Example99">Course</label>
                       <br />
-                      <span>{{ errors.cource }}</span>
+                      <span>{{ errors.course }}</span>
                     </div>
 
                     <div class="d-flex justify-content-end pt-3">
@@ -148,7 +148,7 @@ const schema = yup.object({
   state: yup.string().required(),
   city: yup.string().required(),
   pincode: yup.string().required(),
-  cource: yup.string().required(),
+  course: yup.string().required(),
 });
 
 //submit form
