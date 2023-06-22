@@ -71,7 +71,7 @@ export default {
     },
     deleteUser(id) {  // delete user
       this.store.deleteUser(id)
-     this.tableData= useCrudStore().data
+     this.tableData=useCrudStore().data
 
     }
   },

@@ -91,14 +91,7 @@
                           <option value="3">Gujrat</option>
                         </select>
                       </div>
-                      <div class="col-md-6 mb-4">
-                        <select class="select" v-model="userData.user.city">
-                          <option value="" selected disabled>City</option>
-                          <option value="1">Mumbai</option>
-                          <option value="2">Pune</option>
-                          <option value="3">Delhi</option>
-                        </select>
-                      </div>
+                    
                     </div>
 
                     <div class="form-outline mb-4">

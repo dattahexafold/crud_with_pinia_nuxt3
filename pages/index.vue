@@ -96,16 +96,7 @@
                         <br />
                         <span>{{ errors.state }}</span>
                       </div>
-                      <div class="col-md-6 mb-4">
-                        <Field class="select" name="city" as="select">
-                          <option value="" selected disabled>City</option>
-                          <option value="1">Mumbai</option>
-                          <option value="2">Pune</option>
-                          <option value="3">Delhi</option>
-                        </Field>
-                        <br />
-                        <span>{{ errors.city }}</span>
-                      </div>
+                     
                     </div>
 
                     <div class="form-outline mb-4">
