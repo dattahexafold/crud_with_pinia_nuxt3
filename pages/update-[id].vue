@@ -114,7 +114,7 @@
                     </div>
 
                     <div class="d-flex justify-content-end pt-3">
-                      <button type="button" class="btn btn-light btn-lg">
+                      <button type="reset" class="btn btn-light btn-lg">
                         Reset all
                       </button>
                       <button type="button" @click.prevent="SubmitData" class="btn btn-warning btn-lg ms-2">
