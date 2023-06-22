@@ -141,13 +141,13 @@ import { Field, Form, ErrorMessage } from "vee-validate";
 const schema = yup.object({
   id: yup.number().required().min(3),
   firstName: yup.string().required().trim(),
-  email: yup.string().required().trim(),
+  email: yup.string().email().required().trim(),
   city: yup.string().required().trim(),
   address: yup.string().required().trim(),
   gender: yup.string().required().trim(),
   state: yup.string().required().trim(),
   city: yup.string().required().trim(),
-  pincode: yup.string().required().trim(),
+  pincode: yup.number().min(4).max(5).required(),
   course: yup.string().required().trim(),
 });
 
