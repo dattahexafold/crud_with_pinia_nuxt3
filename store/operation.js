@@ -5,6 +5,9 @@ import {defineStore} from 'pinia';
             loading: false
     }),
    actions:{
+    addUser(user) {
+        this.data.push(user);
+    },
     updateUser(user){
         const {id}=user
         let update=this.data.find((item)=>item.id===id)

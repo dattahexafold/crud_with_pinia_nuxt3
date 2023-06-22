@@ -1,21 +1,17 @@
 <template>
   <div>
-    <section class="">
+    <Form @submit="SubmitData" :validation-schema="schema" v-slot="{ errors, handleSubmit, validate }">
       <div class="container h-100">
         <div class="row d-flex justify-content-center align-items-center h-100">
           <div class="col">
             <div class="card card-registration my-4">
               <div class="row g-0">
                 <div class="col-xl-6 d-none d-xl-block">
-                  <img
-                    src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/img4.webp"
-                    alt="Sample photo"
-                    class="img-fluid"
-                    style="
+                  <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/img4.webp"
+                    alt="Sample photo" class="img-fluid" style="
                       border-top-left-radius: 0.25rem;
                       border-bottom-left-radius: 0.25rem;
-                    "
-                  />
+                    " />
                 </div>
                 <div class="col-xl-6">
                   <div class="card-body p-md-5 text-black">
@@ -26,28 +22,18 @@
                     <div class="row">
                       <div class="col-md-6 mb-4">
                         <div class="form-outline">
-                          <input
-                            v-model="userData.user.id"
-                            type="text"
-                            id="form3Example1m"
-                            class="form-control form-control-lg"
-                          />
-                          <label class="form-label" for="form3Example1m"
-                            >ID</label
-                          >
+                          <Field name="id" type="" id="form3Example1m" class="form-control form-control-lg" />
+                          <label class="form-label" for="form3Example1m">ID</label>
+                          <br />
+                          <span>{{ errors.id }}</span>
                         </div>
                       </div>
                       <div class="col-md-6 mb-4">
                         <div class="form-outline">
-                          <input
-                            v-model="userData.user.firstName"
-                            type="text"
-                            id="form3Example1n"
-                            class="form-control form-control-lg"
-                          />
-                          <label class="form-label" for="form3Example1n"
-                            >first name</label
-                          >
+                          <Field name="firstName" type="text" id="form3Example1n" class="form-control form-control-lg" />
+                          <label class="form-label" for="form3Example1n">first name</label>
+                          <br />
+                          <span>{{ errors.firstName }}</span>
                         </div>
                       </div>
                     </div>
@@ -55,144 +41,92 @@
                     <div class="row">
                       <div class="col-md-6 mb-4">
                         <div class="form-outline">
-                          <input
-                            v-model="userData.user.email"
-                            type="text"
-                            id="form3Example1m1"
-                            class="form-control form-control-lg"
-                          />
-                          <label class="form-label" for="form3Example1m1"
-                            >Email</label
-                          >
+                          <Field name="email" type="text" id="form3Example1m1" class="form-control form-control-lg" />
+                          <label class="form-label" for="form3Example1m1">Email</label>
+                          <br />
+                          <span>{{ errors.email }}</span>
                         </div>
                       </div>
                       <div class="col-md-6 mb-4">
                         <div class="form-outline">
-                          <input
-                            v-model="userData.user.city"
-                            type="text"
-                            id="form3Example1n1"
-                            class="form-control form-control-lg"
-                          />
-                          <label class="form-label" for="form3Example1n1"
-                            >City</label
-                          >
+                          <Field name="city" type="text" id="form3Example1n1" class="form-control form-control-lg" />
+                          <label class="form-label" for="form3Example1n1">City</label>
+                          <br />
+                          <span>{{ errors.city }}</span>
                         </div>
                       </div>
                     </div>
 
                     <div class="form-outline mb-4">
-                      <input
-                        v-model="userData.user.address"
-                        type="text"
-                        id="form3Example8"
-                        class="form-control form-control-lg"
-                      />
-                      <label class="form-label" for="form3Example8"
-                        >Address</label
-                      >
+                      <Field name="address" type="text" id="form3Example8" class="form-control form-control-lg" />
+                      <label class="form-label" for="form3Example8">Address</label>
+                      <br />
+                      <span>{{ errors.address }}</span>
                     </div>
 
-                    <div
-                      class="d-md-flex justify-content-start align-items-center mb-4 py-2"
-                    >
+                    <div class="d-md-flex justify-content-start align-items-center mb-4 py-2">
                       <h6 class="mb-0 me-4">Gender:</h6>
 
                       <div class="form-check form-check-inline mb-0 me-4">
-                        <input
-                          v-model="userData.user.gender"
-                          class="form-check-input"
-                          type="radio"
-                          name="inlineRadioOptions"
-                          id="femaleGender"
-                          value="female"
-                        />
-                        <label class="form-check-label" for="femaleGender"
-                          >Female</label
-                        >
+                        <Field name="gender" class="form-check-input" type="radio" id="femaleGender" value="female" />
+                        <label class="form-check-label" for="femaleGender">Female</label>
                       </div>
 
                       <div class="form-check form-check-inline mb-0 me-4">
-                        <input
-                          v-model="userData.user.gender"
-                          class="form-check-input"
-                          type="radio"
-                          name="inlineRadioOptions"
-                          id="maleGender"
-                          value="male"
-                        />
-                        <label class="form-check-label" for="maleGender"
-                          >Male</label
-                        >
+                        <Field class="form-check-input" type="radio" name="gender" id="maleGender" value="male" />
+                        <label class="form-check-label" for="maleGender">Male</label>
                       </div>
 
                       <div class="form-check form-check-inline mb-0">
-                        <input
-                          v-model="userData.user.gender"
-                          class="form-check-input"
-                          type="radio"
-                          name="inlineRadioOptions"
-                          id="otherGender"
-                          value="other"
-                        />
-                        <label class="form-check-label" for="otherGender"
-                          >Other</label
-                        >
+                        <Field class="form-check-input" type="radio" name="gender" id="otherGender" value="other" />
+                        <label class="form-check-label" for="otherGender">Other</label>
                       </div>
+                      <br />
+                      <span>{{ errors.gender }}</span>
                     </div>
 
                     <div class="row">
                       <div class="col-md-6 mb-4">
-                        <select class="select" v-model="userData.user.state">
+                        <Field class="select" name="state" as="select">
                           <option value="" selected disabled>State</option>
                           <option value="1">Maharastra</option>
                           <option value="2">Goa</option>
                           <option value="3">Gujrat</option>
-                        </select>
+                        </Field>
+                        <br />
+                        <span>{{ errors.state }}</span>
                       </div>
                       <div class="col-md-6 mb-4">
-                        <select class="select" v-model="userData.user.city">
+                        <Field class="select" name="city" as="select">
                           <option value="" selected disabled>City</option>
                           <option value="1">Mumbai</option>
                           <option value="2">Pune</option>
                           <option value="3">Delhi</option>
-                        </select>
+                        </Field>
+                        <br />
+                        <span>{{ errors.city }}</span>
                       </div>
                     </div>
 
                     <div class="form-outline mb-4">
-                      <input
-                        v-model="userData.user.pincode"
-                        type="text"
-                        id="form3Example90"
-                        class="form-control form-control-lg"
-                      />
-                      <label class="form-label" for="form3Example90"
-                        >Pincode</label
-                      >
+                      <Field name="pincode" type="text" id="form3Example90" class="form-control form-control-lg" />
+                      <label class="form-label" for="form3Example90">Pincode</label>
+                      <br />
+                      <span>{{ errors.pincode }}</span>
                     </div>
 
                     <div class="form-outline mb-4">
-                      <input
-                        v-model="userData.user.cource"
-                        type="text"
-                        id="form3Example99"
-                        class="form-control form-control-lg"
-                      />
-                      <label class="form-label" for="form3Example99"
-                        >Course</label
-                      >
+                      <Field name="cource" type="text" id="form3Example99" class="form-control form-control-lg" />
+                      <label class="form-label" for="form3Example99">Course</label>
+                      <br />
+                      <span>{{ errors.cource }}</span>
                     </div>
 
                     <div class="d-flex justify-content-end pt-3">
                       <button type="button" class="btn btn-light btn-lg">
                         Reset all
                       </button>
-                      <button
-                        type="button"
-                        @click.prevent="SubmitData"
-                        class="btn btn-warning btn-lg ms-2"
-                      >
+                      <button type="submit" class="btn btn-warning btn-lg ms-2">
                         Submit form
                       </button>
                     </div>
@@ -203,33 +137,40 @@
           </div>
         </div>
       </div>
-    </section>
+    </Form>
   </div>
 </template>
+
 <script setup>
 import { useCrudStore } from "~/store/operation";
-const userData = reactive({
-  user: {
-    id: "",
-    firstName: "",
-    email: "",
-    city: "",
-    address: "",
-    gender: "",
-    state: "",
-    city: "",
-    pincode: "",
-    cource: "",
-  },
-  store: useCrudStore(),
+import * as yup from "yup";
+import { Field, Form, ErrorMessage } from "vee-validate";
+
+//define form schema
+const schema = yup.object({
+  id: yup.string().required(),
+  firstName: yup.string().required(),
+  email: yup.string().required(),
+  city: yup.string().required(),
+  address: yup.string().required(),
+  gender: yup.string().required(),
+  state: yup.string().required(),
+  city: yup.string().required(),
+  pincode: yup.string().required(),
+  cource: yup.string().required(),
 });
-const SubmitData = () => {
-  if (userData.user.id) {
-    userData.store.$state.data.push({ ...userData.user });
+
+//submit form
+const SubmitData = (values) => {
+  console.log(values);
+  if (values) {
+    useCrudStore().addUser(values);
     navigateTo("/usertable");
-  } else {
-    alert("Please add record");
   }
+  else {
+    console.log("error");
+  }
+
 };
 </script>
 <style>
@@ -239,7 +180,12 @@ const SubmitData = () => {
   padding-left: 0.75em;
   padding-right: 0.75em;
 }
+
 .card-registration .select-arrow {
   top: 13px;
+}
+
+span {
+  color: red;
 }
 </style>
