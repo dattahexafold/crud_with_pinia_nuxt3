@@ -147,7 +147,7 @@ const schema = yup.object({
   gender: yup.string().required().trim(),
   state: yup.string().required().trim(),
   city: yup.string().required().trim(),
-  pincode: yup.number().min(4).max(5).required(),
+  pincode: yup.number().min(4).required(),
   course: yup.string().required().trim(),
 });
 
